@@ -16,9 +16,9 @@ def run_game():
     #Make a group pf bullets
     bullets= Group()
     #make a group of aliens
-    alien= Group()
+    aliens= Group()
     #Create the fleet of aliens
-    gf.create_fleet(ai_settings, screen, aliens)
+    gf.create_fleet(ai_settings, screen, ship, aliens)
 
 
     # Start the main loop for the game.
@@ -26,7 +26,12 @@ def run_game():
         # Watch for keyboard and mouse events.
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
+        gf.update_bullets(aliens, bullets)
         gf.update_bullets(bullets)
+        #Make the aliens move 
+        gf.update_aliens(aliens)
+        #update aliens
+        gf.update_aliens(ai_settings, aliens)
         ## update images on the screen and flip to the new screen
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
