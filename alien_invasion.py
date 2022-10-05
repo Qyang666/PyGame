@@ -26,14 +26,10 @@ def run_game():
         # Watch for keyboard and mouse events.
         gf.check_events(ai_settings, screen, ship, bullets)
         ship.update()
-        gf.update_bullets(aliens, bullets)
-        gf.update_bullets(bullets)
+        gf.update_bullets(ai_settings, screen, ship, aliens, bullets)
         #Make the aliens move 
-        gf.update_aliens(aliens)
-        #update aliens
         gf.update_aliens(ai_settings, aliens)
         ## update images on the screen and flip to the new screen
         gf.update_screen(ai_settings, screen, ship, aliens, bullets)
 
 run_game()
-
