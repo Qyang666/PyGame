@@ -20,7 +20,6 @@ class Bullet(Sprite):
         self.speed_factor = ai_settings.bullet_speed_factor
 
 
-
     def update(self):
         """Move the bullet up the screen."""
         # Update the decimal position of the bullet.

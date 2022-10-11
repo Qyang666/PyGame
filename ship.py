@@ -1,5 +1,6 @@
 import pygame
 
+#create ship class
 class Ship():
 
     ## initialize the ship and set its starting position
