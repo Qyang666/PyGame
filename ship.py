@@ -11,15 +11,14 @@ class Ship(Sprite):
         # initialize the ship and set its starting position 
         self.ai_settings = ai_settings
         self.image=pygame.image.load('ship.bmp')
+
         #Start each new ship at the bottom center of the screen
         self.rect = self.image.get_rect()
         self.screen_rect = screen.get_rect()
-        #ect taks only integer so have to do some adjustments
-        #to store the ship's position accurately, we need a new attribute center
-        self.center=float(self.rect.centerx)
-         # Start each new ship at the bottom center of the screen.
+
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
+        self.center=float(self.rect.centerx)
 
         # Continuous movement flag 
         self.moving_right = False
@@ -42,3 +41,6 @@ class Ship(Sprite):
     def center_ship(self):
            """Center the ship on the screen."""
            self.center = self.screen_rect.centerx
+    
+
+        
