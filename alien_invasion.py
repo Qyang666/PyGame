@@ -43,6 +43,6 @@ def run_game():
             gf.update_aliens(ai_settings, stats, screen, ship, aliens, bullets)
 
         ## update images on the screen and flip to the new screen
-        gf.update_screen(ai_settings, screen, ship, aliens, bullets)
-
+            gf.update_screen(ai_settings, screen, stats, ship, aliens, bullets, play_button)
+            
 run_game()
