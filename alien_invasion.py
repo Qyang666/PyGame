@@ -37,17 +37,13 @@ def run_game():
 
     # Start the main loop for the game.
     while True:
-        # Watch for keyboard and mouse events.
         gf.check_events(ai_settings, screen, stats, sb, play_button, ship, aliens, bullets)
 
         if stats.game_active:
             ship.update()
             gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
-
-        #Make the aliens move 
             gf.update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets)
 
-        ## update images on the screen and flip to the new screen
-            gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)
-            
+        gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)
+        
 run_game()
