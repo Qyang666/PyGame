@@ -6,6 +6,7 @@ class GameStats():
         self.reset_stats()
          # Start game in an inactive state.
         self.game_active = False
+        # the high score should never be reset, so we put that attribute here 
         self.high_score = 0
     
     def reset_stats(self):
