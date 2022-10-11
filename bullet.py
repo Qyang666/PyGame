@@ -11,13 +11,19 @@ class Bullet(Sprite):
 
         # Create a bullet rect at (0, 0) and then set correct position.
         self.rect = pygame.Rect(0, 0, ai_settings.bullet_width, ai_settings.bullet_height)
+
+        #bullets are fired at top mid middle of the ship
         self.rect.centerx = ship.rect.centerx
         self.rect.top = ship.rect.top
 
         # Store the bullet's position as a decimal value.
         # set y-coordinate postion so we can change the bullets' speed
         self.y = float(self.rect.y)
+        
+        #set bullet color
         self.color = ai_settings.bullet_color
+
+        #set bullet moving speed
         self.speed_factor = ai_settings.bullet_speed_factor
 
         

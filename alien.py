@@ -7,6 +7,7 @@ class Alien(Sprite):
         """Initialize the alien and set its starting position."""
         super().__init__()
         
+        #original setting
         self.screen = screen
         self.ai_settings = ai_settings
 
@@ -20,7 +21,7 @@ class Alien(Sprite):
 
         # Store the alien's exact position.
         self.x = float(self.rect.x)
-        
+    
 
     def blitme(self):
         """Draw the alien at its current location."""
@@ -33,8 +34,8 @@ class Alien(Sprite):
         elif self.rect.left <= 0:
             return True
 
-
+    #update alien's position 
     def update(self):
-        """Move the alien right."""
+        """ Move the alien right or left """
         self.x += (self.ai_settings.alien_speed_factor * self.ai_settings.fleet_direction)
         self.rect.x = self.x

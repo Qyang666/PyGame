@@ -11,23 +11,28 @@ from scoreboard import Scoreboard
 
 #start a game
 def run_game():
-    # Initialize game and 
     pygame.init()
-    # create screen 
+
+    # original setings 
     ai_settings = Settings()
+
+    #create a screen 
     screen = pygame.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))
+
     # add screen caption
     pygame.display.set_caption("Alien Invasion")
 
-    #add a button
+    #add a start button before game 
     play_button = Button(ai_settings, screen, "Play")
  
-    ## Create an instance to store game statistics.
+    ## Create instances to store game statistics.
     stats = GameStats(ai_settings)
     sb = Scoreboard(ai_settings, screen, stats)
 
     # Make a ship
     ship = Ship(ai_settings, screen)
+
+    #Create bullets and alien groups
     bullets = Group()
     aliens = Group()
 
@@ -44,6 +49,8 @@ def run_game():
             gf.update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets)
             gf.update_aliens(ai_settings, screen, stats, sb, ship, aliens, bullets)
 
+
+        #redraw the screen during each pass through the loop
         gf.update_screen(ai_settings, screen, stats, sb, ship, aliens, bullets, play_button)
         
 run_game()
